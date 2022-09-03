@@ -1,13 +1,30 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .link {
+    @apply relative w-fit text-white;
+  }
+
+  .link:hover {
+    @apply cursor-pointer before:opacity-100;
+  }
+
+  .link::before {
+    @apply absolute left-1/2 -bottom-1 min-h-[2px] min-w-[50%] -translate-x-1/2 transform bg-current opacity-0 transition duration-150 ease-in content-[''];
+  }
+
+  .creation {
+    @apply my-4 bg-slate-400 bg-cover bg-no-repeat bg-blend-multiply saturate-200 md:my-0 md:w-[350px] md:bg-center md:pt-[500px];
+  }
+
+  .creation:hover {
+    @apply cursor-pointer invert transition-all duration-150 ease-in;
+  }
+
+  .creationText {
+    @apply max-w-[130px] p-4 pt-12 font-['Josefin_Sans'] text-2xl text-white;
+  }
 }
